@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Frontend CI/CD</title>
+</head>
+<body>
+  <h1>Frontend + Backend</h1>
+  <button id="btn">Consumir API</button>
+  <pre id="saida"></pre>
+
+  <script>
+    const API_URL = "https://projeto-back-ci-1.onrender.com/";
+
+    document.getElementById("btn").addEventListener("click", async () => {
+      try {
+        const res = await fetch(API_URL);
+        const data = await res.json();
+        document.getElementById("saida").textContent = JSON.stringify(data, null, 2);
+      } catch (err) {
+        document.getElementById("saida").textContent = "Erro: " + err.message;
+      }
+    });
+  </script>
+</body>
+</html>
