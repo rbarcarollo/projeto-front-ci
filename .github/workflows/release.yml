@@ -3,7 +3,8 @@ name: Deploy Vercel by Tag
 on:
   push:
     tags:
-      - 'v*..'
+      - 'v*.*.*'
+
 
 jobs:
   deploy:
